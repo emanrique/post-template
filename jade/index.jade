@@ -38,12 +38,16 @@ block post
 		| con todas los estilos de códigos que hayamos definido.
 		
 	p
-		img.aligncenter(src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-we-want-you-logo.png", 
-				title="editorconfig we-want-you")
+		img.aligncenter(
+			src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-we-want-you-logo.png", 
+			alt="editorconfig editorconfig-we-want-you")
 	h2 Estilos de código más usados
 	p
 		| Editorconfig nos ofrece 
-		a(href="https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties", target="_blank") 
+		a(
+			href="https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties",
+			target="_blank",
+			title="Lista de propiedades de Editorconfig") 
 			| una lista variada de estilos que puede aplicar
 		| , 
 		| (algunos no son compatibles con ciertos IDES)
@@ -76,13 +80,19 @@ block post
 				| Insertar un nueva línea al final del archivo
 				| esta es una 
 				a(
-					href='http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline') 
+					href='http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline',
+					target="_blank",
+					title="Linea nueva al final en Editorconfig") 
 					| práctica muy recomendada
 				| ).
 	p
 		| Puedes clonar este  
-		a(href="https://github.com/emanrique/editorconfig_speak", target="_blank") repositorio
-		| para ver un ejemplo del uso de EditorConfig.
+		a(
+			href="https://github.com/emanrique/editorconfig_speak",
+			target="_blank",
+			title="Repositorio de ejemplo de editorconfig") repositorio
+		| para ver un ejemplo del uso de EditorConfig
+		| (no olvides darle una estrellita).
 	
 	h2 Utilizando EditorConfig
 	p
@@ -94,6 +104,7 @@ block post
 				| Lo primero que debemos hacer como lo mencioné antes, es 
 				a(
 					href="http://editorconfig.org/#download", 
+					title="editorconfig-plugins",
 					target="_blank") instalar el plugin de Editorconfig en nuestro IDE
 					|.
 			p.irrelevant
@@ -105,14 +116,14 @@ block post
 			p
 				img.aligncenter(
 					src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-file.png",
-					alt="editorconfig file")
+					alt="editorconfig editorconfig-ile")
 		li
 			p
 				| Definimos los estilos de código, podríamos tener estilos de código generales o específicos.
 			p
 				img.aligncenter(
 					src="http://frontendlabs.io/wp-content/uploads/2016/02/example-editorconfig.png",
-					alt="editorconfig example")
+					alt="editorconfig editorconfig-example")
 			p.irrelevant
 				| Podemos tener tantos archivos 
 				span.inline_file .editorconfig 
@@ -160,6 +171,9 @@ block post
 		span.inline_folder unformat-project 
 		| que contiene archivos
 		|	que no están formateados y poder testearlo. 
+	p.irrelevant
+		| Recomiendo utilizar cualquier sistema de control de versiones antes de ejecutar
+		| cualquier comando.
 	p
 		| Lo que tendríamos que hacer es ejecutar el siguiente comando en el folder 
 		span.inline_folder unformat-project :
@@ -170,6 +184,35 @@ block post
 		| Si todo funcionó bien deberíamos tener una la siguiente salida en la consola:
 	img.aligncenter(src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-tools-output.png",
 	alt="editorconfig editorconfig-tools")
+	
+	p
+		| Finalmente veremos que todo los archivos del proyecto han sido formateado según las especificaciones
+		| de su archivo 
+		span.inline_file .editorconfig
+	
+	p Como podemos ver no hay excusa para no usar EditorConfig, su uso es tan importante
+		| para el proceso de estandarización que es necesario considerarlo desde el instante 
+		| que el proyecto es creado. Si tienes alguna duda puedes hacermela llegar por los comentarios
+		| o escribiendome en twitter a @frontend_3. Te invito también a revisar la versión diapositiva
+		| de este post y convencer a tu equipo de lo necesario que es usar Editorconfig
+		| (y si te gusta no olvides darle una estrellita y compartir este post). Gracias por tu tiempo
+	script(async, 
+		class="speakerdeck-embed", 
+		data-id="20e83f482f834528b74e6a6314d665ba",
+		data-ratio="1.77777777777778", 
+		src="//speakerdeck.com/assets/embed.js")
+		
+	h2 Referencias Bibliograficas
+	p
+		| Documentación oficial de EditorConfig. 
+		a(src="http://editorconfig.org/", title="Documentación oficial de EditorConfig") http://editorconfig.org/
+	p
+		| TREY HUMMER. EditorConfig.
+		a(src="https://treyhunner.com/editorconfig-slides/", title="Editorconfig por Trey Hummer") 
+			| https://treyhunner.com/editorconfig-slides/
+		
+	
+	
 		
 		
 	

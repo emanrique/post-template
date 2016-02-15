@@ -7,7 +7,7 @@ var Buffer = require('buffer').Buffer;
 vfs.src(['./jade/**/**/*.jade', '!./jade/**/**/_*.jade'])
     .pipe(map( (data, callback) => {
         pre_html = data.contents.toString('utf8');
-        html = jade.render(pre_html, {filename: './jade/', pretty: true});
+        html = jade.render(pre_html, {filename: './jade/', pretty: false});
         // console.log(html);
         data.contents = new Buffer(html);
         data.extname = '.html';
@@ -15,4 +15,3 @@ vfs.src(['./jade/**/**/*.jade', '!./jade/**/**/_*.jade'])
         callback(null, data);
     }))
     .pipe(vfs.dest('./output/'));
-
