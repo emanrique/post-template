@@ -1,47 +1,188 @@
-<!DOCTYPE html><html lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui"><meta name="language" content="es"><title>Frontend Labs</title><link rel="stylesheet" id="font-awesome-css" href="../themes/ink/assets/css/font-awesome.css" type="text/css" media="all"><link rel="stylesheet" id="stag-shortcode-styles-css" href="../themes/plugins/stagtools/assets/css/stag-shortcodes.css?ver=1.2." type="text/css" media="all"><link rel="stylesheet" id="main-style-css" href="../themes/plugins/wens-social-links/css/main-style.css" type="text/css" media="all"><link rel="stylesheet" id="easy-facebook-likebox-plugin-styles-css" href="../themes/plugins/easy-facebook-likebox/public/assets/css/public.css?ver=4.2" type="text/css" media="all"><link rel="stylesheet" id="easy-facebook-likebox-popup-styles-css" href="../themes/plugins/easy-facebook-likebox/public/assets/popup/magnific-popup.css?ver=4.2" type="text/css" media="all"><link rel="stylesheet" id="stag-google-fonts-css" href="../themes/general/css/monserrat.css" type="text/css" media="all"><link rel="stylesheet" id="stag-style-css" href="../themes/ink/style.css" type="text/css" media="all"><link rel="stylesheet" id="jetpack_css-css" href="../themes/plugins/jetpack/css/jetpack.css" type="text/css" media="all"><link rel="stylesheet" href="../themes/general/css/general.css" type="text/css" media="all"><script type="text/javascript" src="../themes/general/js/run_prettify.js"></script></head><body class="single single-post single-format-standard chrome header-over stagtools"><div class="article-cover article-cover"><div class="article-cover__background stag-image--none"><div class="article-cover__inner"><div class="article-cover__content"><h1 class="entry-title"><a href="" rel="bookmark">EditorConfig: ¿Qué es y cómo usarlo?</a></h1><footer class="entry-meta"><span class="posted-on"></span><a href="" title="" rel="bookmark"><time class="entry-date published">14 de Febrero, 2016</time><span class="author vcard"><a href="" class="url fn n">Elizabeth Manrique</a></span></a></footer></div></div></div></div><main id="main" class="site-main"><article class="post type-post status-publish format-standard has-post-thumbnail hentry"><div class="entry-content"><!-- begin--><p>A menudo un proyecto(dependiendo de su complejidad) es programado por más
-de un desarollador, es entonces  muy normal encontrarse con la situación en
-la que un "programador A" tendrá que modificar el archivo "X" que creo un
-"programador B". Por buenas practicas, antes de que el "programador A" empiece
-el cambio en el archivo "X", debe considerar <b>los estándares que el "programador B" definió, </b>esto ayudará a poder evitar futuros conflictos en la forma de trabajo
-de los archivos y como consecuencia, ayudar a que el <b>proyecto sea más mantenible.</b></p><p>Parte de los estándares de programación son los estilos de código, que no son nada más
-que la estandarización de los formatos de los archivos. Por ejemplo:</p><p><b>¿Usamos espacios o tabs? ¿Cuál será el ancho de cada tab?
-¿Permitimos los espacios en blanco al final de cada línea?</b></p><h2>Automatizando</h2><p>Definir los estilos de código nos ayudará mucho como equipo para trabajar bajo estandares,
-podríamos tener estilos de código muy generales como por ejemplo:
-	usar tabs para las indentaciones de todos los archivos o muy especificos
-	como por ejemplo: usar 4 columnas de indentación solo para
-	los archivos html, pero aplicarlos manualmente será un dolor de cabeza constante
-	porque tocará revisar constantemente que estilos debemos aplicar a cada archivo
-	y mantener informado al equipo para que lo apliquen en sus respectivos IDE's.</p><p>	¡Pero calma! Para eso existe EditorConfig, para ayudarnos a automatizar y centralizar
-	los estilos de código, usarlo es tan sencillo como instalar el plugin respectivo a nuestro IDE
-y agregar a nuestro proyecto un archivo extensión ".editorconfig"
-con todas los estilos de códigos que hayamos definido.</p><p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-we-want-you-logo.png" alt="editorconfig editorconfig-we-want-you" class="aligncenter"></p><h2>Estilos de código más usados</h2><p>Editorconfig nos ofrece <a href="https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties" target="_blank" title="Lista de propiedades de Editorconfig"> 
-una lista variada de estilos que puede aplicar</a>, 
-(algunos no son compatibles con ciertos IDES)
-los más importante y usados son:</p><ul><li><p><b>Estilo de identación(indent_style): </b>Tabs o espacios.</p></li><li><p><b>Ancho de indentación(indent_size): </b>Número de columnas por indentación.</p></li><li><p> <b>Final de línea(end_of_line): </b>Control de salto de linea (LF, CR, CRLF).</p></li><li><p><b>	Charset(charset):</b>Control del charset</p></li><li><p> <b>Recortar espacios en blanco(trim_trailing_whitespace): </b>Eliminar cualquier
-espacio en blanco precedido por una nueva linea.</p></li><li><p> <b>Insertar nueva línea al final del archivo(new_line_final):</b>Insertar un nueva línea al final del archivo
-esta es una <a href="http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline" target="_blank" title="Linea nueva al final en Editorconfig"> 
-práctica muy recomendada</a>).</p></li></ul><p>Puedes clonar este  <a href="https://github.com/emanrique/editorconfig_speak" target="_blank" title="Repositorio de ejemplo de editorconfig">repositorio</a>para ver un ejemplo del uso de EditorConfig
-(no olvides darle una estrellita).</p><h2>Utilizando EditorConfig</h2><p>Para empezar a utilizar EditorConfig debemos seguir los siguientes pasos:</p><ol><li><p>Lo primero que debemos hacer como lo mencioné antes, es <a href="http://editorconfig.org/#download" title="editorconfig-plugins" target="_blank">instalar el plugin de Editorconfig en nuestro IDE
-.</a></p><p class="irrelevant">Nota: Algunos IDEs ya vienen con el soporte integrado.</p></li><li><p>Creamos en la raíz de nuestro proyecto el archivo <span class="inline_file">.editorconfig</span></p><p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-file.png" alt="editorconfig editorconfig-ile" class="aligncenter"></p></li><li><p>Definimos los estilos de código, podríamos tener estilos de código generales o específicos.</p><p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/example-editorconfig.png" alt="editorconfig editorconfig-example" class="aligncenter"></p><p class="irrelevant">Podemos tener tantos archivos <span class="inline_file">.editorconfig </span> como deseemos por carpeta dentro de un proyecto,
-pero solo el principal debe tener la propiedad <span class="inline_code">root = true</span>.</p></li></ol><p>	¡Y listo! Con esto cada vez que trabajemos con un archivo, Editorconfig se
-	encargará de <b>aplicar automáticamente los estilos de código </b>y no importará el IDE con el que trabajemos mientras tengamos el plugin instalado,
-	todos podremos utilizar el mismo estilo de código.</p><blockquote><p>EditorConfig solo aplicará
-el formato que hayamos definido siempre y cuando se abra y guarde el archivo.</p></blockquote><h2>Migrando</h2><p>	Hasta ahora hemos entendido el papel fundamental que tiene EditorConfig al momento
-	de estandarizar y el tiempo que nos va a ahorrar definiendo en un solo archivo de estilos
-	que funcione en cualquier IDE, pero <b>¿Qué pasa si ya tenemos un proyecto avanzado
-	y queremos aplicarlo? </b></p><p>Una idea poco práctica sería abrir y cerrar todos los archivos para que Editorconfig
-	los formateé. Pero una vez más podemos automatizar este proceso, utilizando 
-alguna herramienta que nos permita refactorizar
-	nuestros archivos en base a nuestro archivo editorconfig.Podemos utilizar entonces 
-por ejemplo un <b>npm </b>que nos ayude a hacer el formateo de manera automática, un paquete bastante
-utilizado es <b>editorconfig-tools.</b>Lo primero que debemos hacer es instalar de forma global el paquete:</p><pre class="prettyprint lang-sh"><code>npm install -g editorconfig-tools</code></pre><p>	Y luego ejecutar el comando editorconfig-tools para que formatee los achivos en el proyecto que deseemos aplicarlo.
-	A modo de ejemplo cree un proyecto en el mismo repo llamado <span class="inline_folder">unformat-project </span>que contiene archivos
-	que no están formateados y poder testearlo. </p><p class="irrelevant">Recomiendo utilizar cualquier sistema de control de versiones antes de ejecutar
-cualquier comando.</p><p>Lo que tendríamos que hacer es ejecutar el siguiente comando en el folder <span class="inline_folder">unformat-project :</span></p><pre class="prettyprint lang-sh"><code>editorconfig-tools fix **/*</code></pre><p>Si todo funcionó bien deberíamos tener una la siguiente salida en la consola:</p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-tools-output.png" alt="editorconfig editorconfig-tools" class="aligncenter"><p>Finalmente veremos que todo los archivos del proyecto han sido formateado según las especificaciones
-de su archivo <span class="inline_file">.editorconfig</span></p><p>Como podemos ver no hay excusa para no usar EditorConfig, su uso es tan importante
-para el proceso de estandarización que es necesario considerarlo desde el instante 
-que el proyecto es creado. Si tienes alguna duda puedes hacermela llegar por los comentarios
-o escribiendome en twitter a @frontend_3. Te invito también a revisar la versión diapositiva
-de este post y convencer a tu equipo de lo necesario que es usar Editorconfig
-(y si te gusta no olvides darle una estrellita y compartir este post). Gracias por tu tiempo</p><script async data-id="20e83f482f834528b74e6a6314d665ba" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js" class="speakerdeck-embed"></script><h2>Referencias Bibliograficas</h2><p>Documentación oficial de EditorConfig. <a src="http://editorconfig.org/" title="Documentación oficial de EditorConfig">http://editorconfig.org/</a></p><p>TREY HUMMER. EditorConfig.<a src="https://treyhunner.com/editorconfig-slides/" title="Editorconfig por Trey Hummer"> 
-https://treyhunner.com/editorconfig-slides/</a></p><!-- end--></div></article></main></body></html>
+<!DOCTYPE html>
+<html lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta name="language" content="es">
+    <title>Frontend Labs</title>
+    <link rel="stylesheet" id="font-awesome-css" href="../themes/ink/assets/css/font-awesome.css" type="text/css" media="all">
+    <link rel="stylesheet" id="stag-shortcode-styles-css" href="../themes/plugins/stagtools/assets/css/stag-shortcodes.css?ver=1.2." type="text/css" media="all">
+    <link rel="stylesheet" id="main-style-css" href="../themes/plugins/wens-social-links/css/main-style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="easy-facebook-likebox-plugin-styles-css" href="../themes/plugins/easy-facebook-likebox/public/assets/css/public.css?ver=4.2" type="text/css" media="all">
+    <link rel="stylesheet" id="easy-facebook-likebox-popup-styles-css" href="../themes/plugins/easy-facebook-likebox/public/assets/popup/magnific-popup.css?ver=4.2" type="text/css" media="all">
+    <link rel="stylesheet" id="stag-google-fonts-css" href="../themes/general/css/monserrat.css" type="text/css" media="all">
+    <link rel="stylesheet" id="stag-style-css" href="../themes/ink/style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="jetpack_css-css" href="../themes/plugins/jetpack/css/jetpack.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../themes/general/css/general.css" type="text/css" media="all">
+    <script type="text/javascript" src="../themes/general/js/run_prettify.js"></script>
+  </head>
+  <body class="single single-post single-format-standard chrome header-over stagtools">
+    <div class="article-cover article-cover">
+      <div class="article-cover__background stag-image--none">
+        <div class="article-cover__inner">
+          <div class="article-cover__content">
+            <h1 class="entry-title"><a href="" rel="bookmark">EditorConfig: ¿Qué es y cómo usarlo?</a></h1>
+            <footer class="entry-meta"><span class="posted-on"></span><a href="" title="" rel="bookmark">
+                <time class="entry-date published">14 de Febrero, 2016</time><span class="author vcard"><a href="" class="url fn n">Elizabeth Manrique</a></span></a></footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main id="main" class="site-main">
+      <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+        <div class="entry-content">
+          <!-- begin-->
+          <p>
+            A menudo un proyecto(dependiendo de su complejidad) es programado por más
+            de un desarollador, es entonces  muy normal encontrarse con la situación en
+            la que un "programador A" tendrá que modificar el archivo "X" que creo un
+            "programador B". Por buenas practicas, antes de que el "programador A" empiece
+            el cambio en el archivo "X", debe considerar <b>los estándares que el "programador B" definió, </b>esto ayudará a poder evitar futuros conflictos en la forma de trabajo
+            de los archivos y como consecuencia, ayudar a que el <b>proyecto sea más mantenible.</b>
+          </p>
+          <p>
+            Parte de los estándares de programación son los estilos de código, que no son nada más
+            que la estandarización de los formatos de los archivos. Por ejemplo:
+          </p>
+          <p><b>
+              ¿Usamos espacios o tabs? ¿Cuál será el ancho de cada tab?
+              ¿Permitimos los espacios en blanco al final de cada línea?</b></p>
+          <h2>Automatizando</h2>
+          <p>
+            Definir los estilos de código nos ayudará mucho como equipo para trabajar bajo estandares,
+            podríamos tener estilos de código muy generales como por ejemplo:
+            	usar tabs para las indentaciones de todos los archivos o muy especificos
+            	como por ejemplo: usar 4 columnas de indentación solo para
+            	los archivos html, pero aplicarlos manualmente será un dolor de cabeza constante
+            	porque tocará revisar constantemente que estilos debemos aplicar a cada archivo
+            	y mantener informado al equipo para que lo apliquen en sus respectivos IDE's.
+          </p>
+          <p>
+            	¡Pero calma! Para eso existe EditorConfig, para ayudarnos a automatizar y centralizar
+            	los estilos de código, usarlo es tan sencillo como instalar el plugin respectivo a nuestro IDE
+            y agregar a nuestro proyecto un archivo extensión ".editorconfig"
+            con todas los estilos de códigos que hayamos definido.
+          </p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-logo.png" alt="editorconfig editorconfig-logo" class="aligncenter"></p>
+          <h2>Estilos de código más usados</h2>
+          <p>Editorconfig nos ofrece <a href="https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties" target="_blank" title="Lista de propiedades de Editorconfig">
+               
+              una lista variada de estilos que puede aplicar</a>, 
+            (algunos no son compatibles con ciertos IDES)
+            los más importante y usados son:
+          </p>
+          <ul>
+            <li>
+              <p><b>Estilo de identación(indent_style): </b>Tabs o espacios.</p>
+            </li>
+            <li>
+              <p><b>Ancho de indentación(indent_size): </b>Número de columnas por indentación.</p>
+            </li>
+            <li>
+              <p> <b>Final de línea(end_of_line): </b>Control de salto de linea (LF, CR, CRLF).</p>
+            </li>
+            <li>
+              <p><b>	Charset(charset):</b>Control del charset</p>
+            </li>
+            <li>
+              <p> <b>Recortar espacios en blanco(trim_trailing_whitespace): </b>Eliminar cualquier
+                espacio en blanco precedido por una nueva linea.
+              </p>
+            </li>
+            <li>
+              <p> <b>Insertar nueva línea al final del archivo(new_line_final):</b>Insertar un nueva línea al final del archivo
+                esta es una <a href="http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline" target="_blank" title="Linea nueva al final en Editorconfig">
+                   
+                  práctica muy recomendada</a>).
+              </p>
+            </li>
+          </ul>
+          <p>Puedes clonar este  <a href="https://github.com/emanrique/editorconfig_speak" target="_blank" title="Repositorio de ejemplo de editorconfig">repositorio</a>para ver un ejemplo del uso de EditorConfig
+            (no olvides darle una estrellita).
+          </p>
+          <h2>Utilizando EditorConfig</h2>
+          <p>Para empezar a utilizar EditorConfig debemos seguir los siguientes pasos:</p>
+          <ol>
+            <li>
+              <p>Lo primero que debemos hacer como lo mencioné antes, es <a href="http://editorconfig.org/#download" title="editorconfig-plugins" target="_blank">
+                  instalar el plugin de Editorconfig en nuestro IDE
+                  .</a></p>
+              <p class="irrelevant">Nota: Algunos IDEs ya vienen con el soporte integrado.</p>
+            </li>
+            <li>
+              <p>Creamos en la raíz de nuestro proyecto el archivo <span class="inline_file">.editorconfig</span></p>
+              <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-file.png" alt="editorconfig editorconfig-ile" class="aligncenter"></p>
+            </li>
+            <li>
+              <p>Definimos los estilos de código, podríamos tener estilos de código generales o específicos.</p>
+              <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/example-editorconfig.png" alt="editorconfig editorconfig-example" class="aligncenter"></p>
+              <p class="irrelevant">Podemos tener tantos archivos <span class="inline_file">.editorconfig </span> como deseemos por carpeta dentro de un proyecto,
+                pero solo el principal debe tener la propiedad <span class="inline_code">root = true</span>.
+              </p>
+            </li>
+          </ol>
+          <p>
+            	¡Y listo! Con esto cada vez que trabajemos con un archivo, Editorconfig se
+            	encargará de <b>aplicar automáticamente los estilos de código </b>y no importará el IDE con el que trabajemos mientras tengamos el plugin instalado,
+            	todos podremos utilizar el mismo estilo de código.
+          </p>
+          <blockquote>
+            <p>
+              EditorConfig solo aplicará
+              el formato que hayamos definido siempre y cuando se abra y guarde el archivo.
+            </p>
+          </blockquote>
+          <h2>Migrando</h2>
+          <p>
+            	Hasta ahora hemos entendido el papel fundamental que tiene EditorConfig al momento
+            	de estandarizar y el tiempo que nos va a ahorrar definiendo en un solo archivo de estilos
+            	que funcione en cualquier IDE, pero <b>
+              ¿Qué pasa si ya tenemos un proyecto avanzado
+              	y queremos aplicarlo? </b>
+          </p>
+          <p>
+            Una idea poco práctica sería abrir y cerrar todos los archivos para que Editorconfig
+            	los formateé. Pero una vez más podemos automatizar este proceso, utilizando 
+            alguna herramienta que nos permita refactorizar
+            	nuestros archivos en base a nuestro archivo editorconfig.Podemos utilizar entonces 
+            por ejemplo un <b>npm </b>que nos ayude a hacer el formateo de manera automática, un paquete bastante
+            utilizado es <b>editorconfig-tools.</b>Lo primero que debemos hacer es instalar de forma global el paquete:
+          </p>
+          <pre class="prettyprint lang-sh"><code>npm install -g editorconfig-tools</code></pre>
+          <p>
+            	Y luego ejecutar el comando editorconfig-tools para que formatee los achivos en el proyecto que deseemos aplicarlo.
+            	A modo de ejemplo cree un proyecto en el mismo repo llamado <span class="inline_folder">unformat-project </span>que contiene archivos
+            	que no están formateados y poder testearlo. 
+          </p>
+          <p class="irrelevant">
+            Recomiendo utilizar cualquier sistema de control de versiones antes de ejecutar
+            cualquier comando.
+          </p>
+          <p>Lo que tendríamos que hacer es ejecutar el siguiente comando en el folder <span class="inline_folder">unformat-project :</span></p>
+          <pre class="prettyprint lang-sh"><code>editorconfig-tools fix **/*</code></pre>
+          <p>Si todo funcionó bien deberíamos tener una la siguiente salida en la consola:</p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/editorconfig-tools-output.png" alt="editorconfig editorconfig-tools" class="aligncenter">
+          <p>
+            Finalmente veremos que todo los archivos del proyecto han sido formateado según las especificaciones
+            de su archivo <span class="inline_file">.editorconfig</span>
+          </p>
+          <p>
+            Como podemos ver no hay excusa para no usar EditorConfig, su uso es tan importante
+            para el proceso de estandarización que es necesario considerarlo desde el instante 
+            que el proyecto es creado. Si tienes alguna duda puedes hacermela llegar por los comentarios
+            o escribiendome en twitter a @frontend_3. Te invito también a revisar la versión diapositiva
+            de este post y convencer a tu equipo de lo necesario que es usar Editorconfig
+            (y si te gusta no olvides darle una estrellita y compartir este post). Gracias por tu tiempo
+          </p>
+          <script async data-id="20e83f482f834528b74e6a6314d665ba" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js" class="speakerdeck-embed"></script>
+          <h2>Referencias Bibliograficas</h2>
+          <p>Documentación oficial de EditorConfig. <a src="http://editorconfig.org/" title="Documentación oficial de EditorConfig">http://editorconfig.org/</a></p>
+          <p>TREY HUMMER. EditorConfig.<a src="https://treyhunner.com/editorconfig-slides/" title="Editorconfig por Trey Hummer">
+               
+              https://treyhunner.com/editorconfig-slides/</a></p>
+          <!-- end-->
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
